@@ -3,6 +3,7 @@ package jack.javacore.io.file;
 import org.junit.Test;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * Theme:
@@ -22,7 +23,6 @@ public class FileDemo {
 
     @Test
     public void isFileOrDirectory() {
-
         // File#exists()
         System.out.println(new File("C:\\Users\\D1M\\Desktop\\zzd_note\\Java core\\vsdx\\Collection.vsdx").exists());
         System.out.println(new File("C:\\Users\\D1M\\Desktop\\zzd_note\\Java core\\vsdx\\Collection.vsdx1").exists());
@@ -35,6 +35,23 @@ public class FileDemo {
         System.out.println(new File("C:\\Users\\D1M\\Desktop\\zzd_note\\Java core\\vsdx\\Collection.vsdx").isDirectory());
         System.out.println(new File("C:\\Users\\D1M\\Desktop\\zzd_note\\Java core\\vsd").isDirectory());
         System.out.println(new File("C:\\Users\\D1M\\Desktop\\zzd_note\\Java core\\vsdx").isDirectory());
+    }
+
+    @Test
+    public void createFileOrDirectory() throws IOException {
+        File file = new File("C:\\Users\\D1M\\Desktop\\zzd_note\\Java core\\vsdx");
+        if (!file.exists()) {
+            // Atomically creates a new, empty file named by this abstract pathname if
+            // and only if a file with this name does not yet exist.
+            boolean newFile = file.createNewFile();
+            // Creates the directory named by this abstract pathname.
+            boolean mkdir = file.mkdir();
+            //* Creates the directory named by this abstract pathname, including any
+            //* necessary but nonexistent parent directories.  Note that if this
+            //* operation fails it may have succeeded in creating some of the necessary
+            //* parent directories.
+            boolean mkdirs = file.mkdirs();
+        }
     }
 
 }
