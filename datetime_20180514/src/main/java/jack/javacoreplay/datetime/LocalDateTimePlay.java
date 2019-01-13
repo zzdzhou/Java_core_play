@@ -27,7 +27,7 @@ public class LocalDateTimePlay {
         System.out.println(LocalTime.of(23, 12)); //23:12
         System.out.println(LocalTime.of(12, 30, 11)); //12:30:11
 
-        System.out.println(LocalDateTime.now()); //2018-05-14T14:51:43.270
+        System.out.println("LocalDateTime.now() = " + LocalDateTime.now()); // output LocalDateTime.now() = 2019-01-14T07:16:12.101
         System.out.println(LocalDateTime.of(LocalDate.now(), LocalTime.now())); //2018-05-14T14:51:43.270
 
         System.out.println("\n// Instant");
